@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth";
 import { authConfig } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import SongCard from "@/components/SongCard";
+import CreatePlaylist from "@/components/CreatePlaylist";
 
 const getTopSongs = async (accessToken) => {
   const result = await fetch(
@@ -28,6 +29,7 @@ const Page = async () => {
 
   return (
     <div className={"flex flex-col items-center gap-8 mt-10"}>
+      <CreatePlaylist />
       {topSongs.map((song, index) => {
         return <SongCard key={index} song={song} />;
       })}
