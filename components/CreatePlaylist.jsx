@@ -7,7 +7,7 @@ const CreatePlaylist = ({ createPlaylist }) => {
   if (session) {
   }
   const result = async () => {
-    const playlist = fetch(
+    const response = await fetch(
       "https://api.spotify.com/v1/users/capstoli_13/playlists",
       {
         method: "POST",
@@ -22,7 +22,8 @@ const CreatePlaylist = ({ createPlaylist }) => {
         }),
       }
     );
-
+    const playlist = await response.json();
+    console.log(playlist);
     return result;
   };
 
