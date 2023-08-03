@@ -9,7 +9,7 @@ const ProfileLayout = ({ children }) => {
         }
       >
         <h1 className={"text-4xl"}>
-          <span className={"text-[#1ed760]"}>Spotify</span>Stats
+          <span className={"text-[#1ed760]"}>Eras</span>Top5
         </h1>
         <UserSignOut />
       </div>

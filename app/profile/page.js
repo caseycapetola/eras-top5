@@ -7,6 +7,7 @@ import TopFivePlaylist from "@/components/TopFivePlaylist";
 import AddSongs from "@/components/AddSongs";
 
 const getTopSongs = async (accessToken) => {
+  console.log("YEET");
   const result = await fetch(
     "https://api.spotify.com/v1/me/top/tracks?limit=20&time_range=short_term",
     {
@@ -28,6 +29,7 @@ const Page = async () => {
   }
 
   const topSongs = (await getTopSongs(session.accessToken)).items;
+  console.log(topSongs);
 
   return (
     <div className={"flex flex-col items-center gap-8 mt-10"}>
