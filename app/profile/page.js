@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import SongCard from "@/components/SongCard";
 import CreatePlaylist from "@/components/CreatePlaylist";
 import TopFivePlaylist from "@/components/TopFivePlaylist";
+import AddSongs from "@/components/AddSongs";
 
 const getTopSongs = async (accessToken) => {
   const result = await fetch(
@@ -32,6 +33,7 @@ const Page = async () => {
     <div className={"flex flex-col items-center gap-8 mt-10"}>
       <CreatePlaylist />
       <TopFivePlaylist />
+      <AddSongs />
       {topSongs.map((song, index) => {
         return <SongCard key={index} song={song} />;
       })}
