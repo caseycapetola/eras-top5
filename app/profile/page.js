@@ -42,11 +42,14 @@ const Page = async () => {
           {session.user.name + "'"}s Top Songs
         </div>
         <div className="animate__animated animate__fadeInUp delay-2 flex flex-col items-center gap-8 pt-10">
-          {topSongs === undefined
+          {/* {topSongs === undefined
             ? console.log("no top songs?")
             : topSongs.map((song, index) => {
                 return <SongCard key={index} song={song} />;
-              })}
+              })} */}
+          {topSongs.map((song, index) => {
+            return <SongCard key={index} song={song} />;
+          })}
           {/* <CreatePlaylist />
           <TopFivePlaylist /> */}
           <div className="flex flex-col gap-12 mb-12 items-center sm:flex-row">
