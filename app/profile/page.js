@@ -39,7 +39,7 @@ const Page = async () => {
         }
       >
         <div className="animate__animated animate__fadeIn flex flex-col items-center gap-8 text-4xl">
-          {session.user.name}'s Top Songs
+          {session.user.name + "'"}s Top Songs
         </div>
         <div className="animate__animated animate__fadeInUp delay-2 flex flex-col items-center gap-8 pt-10">
           {topSongs === undefined
