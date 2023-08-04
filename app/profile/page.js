@@ -8,6 +8,7 @@ import TopFivePlaylist from "@/components/TopFivePlaylist";
 import AddSongs from "@/components/AddSongs";
 import "animate.css";
 import "../../styles/animations.css";
+import { getTopFiveSongs } from "@/lib/spotify";
 
 const getTopSongs = async (accessToken) => {
   const result = await fetch(
@@ -15,12 +16,12 @@ const getTopSongs = async (accessToken) => {
     {
       method: "GET",
       headers: {
-        Authorization: "Bearer ${accessToken}",
+        Authorization: `Bearer ${accessToken}`,
       },
     }
   );
-
-  return await result.json();
+  const top5 = await result.json();
+  return top5;
 };
 
 const Page = async () => {
@@ -30,6 +31,7 @@ const Page = async () => {
   }
 
   const topSongs = (await getTopSongs(session.accessToken)).items;
+  console.log(topSongs);
 
   return (
     <>
@@ -47,7 +49,7 @@ const Page = async () => {
             : topSongs.map((song, index) => {
                 return <SongCard key={index} song={song} />;
               })} */}
-          {topSongs.map((song, index) => {
+          {topSongs?.map((song, index) => {
             return <SongCard key={index} song={song} />;
           })}
           {/* <CreatePlaylist />
