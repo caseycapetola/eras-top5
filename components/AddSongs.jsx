@@ -13,7 +13,7 @@ const AddSongs = () => {
   return (
     <button
       onClick={displayToken}
-      className="bg-[#1ed760] text-black rounded-sm py-1 px-2"
+      className="text-lg bg-blue-700 text-white rounded-md p-1 px-3 font-semibold hover:bg-blue-400 ease-in duration-100 w-fit"
     >
       Add Your Top 5 Songs
     </button>

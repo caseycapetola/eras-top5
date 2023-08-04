@@ -6,7 +6,7 @@ export const UserSignOut = () => {
   return (
     <button
       className={
-        "text-lg bg-[#1ed760] text-black rounded-md py-1 px-2 font-semibold"
+        "text-lg bg-blue-400 text-white rounded-md p-1 px-3 font-semibold hover:bg-blue-700 ease-in duration-100 w-fit"
       }
       onClick={() => signOut()}
     >
