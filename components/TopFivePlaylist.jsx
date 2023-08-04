@@ -23,7 +23,7 @@ const TopFivePlaylist = () => {
     }
     console.log(songsToAdd);
     const secondResponse = await fetch(
-      "https://api.spotify.com/v1/playlists/3qRZ3dXnH3tLjKEpe5LQmq/tracks",
+      "https://api.spotify.com/v1/playlists/6SvlnMHDktbb5AiesvGLZg",
       {
         method: "POST",
         headers: {

@@ -10,7 +10,9 @@ export const UserSignIn = () => {
 
   return (
     <button
-      className={"text-lg bg-[#1ed760] text-black rounded-md p-1 font-semibold"}
+      className={
+        "text-lg bg-blue-400 text-white rounded-md p-1 font-semibold hover:bg-blue-700 ease-in duration-100"
+      }
       onClick={handleClick}
     >
       Sign in with Spotify
