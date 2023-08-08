@@ -31,7 +31,7 @@ const Page = async () => {
   }
 
   const topSongs = (await getTopSongs(session.accessToken)).items;
-  console.log(topSongs);
+  // console.log(topSongs);
 
   return (
     <>
@@ -44,11 +44,6 @@ const Page = async () => {
           {session.user.name + "'"}s Top Songs
         </div>
         <div className="animate__animated animate__fadeInUp delay-2 flex flex-col items-center gap-8 pt-10">
-          {/* {topSongs === undefined
-            ? console.log("no top songs?")
-            : topSongs.map((song, index) => {
-                return <SongCard key={index} song={song} />;
-              })} */}
           {topSongs?.map((song, index) => {
             return <SongCard key={index} song={song} />;
           })}
