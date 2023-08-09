@@ -5,6 +5,7 @@ import "../../styles/animations.css";
 import { getTopFiveArtists } from "@/lib/spotify";
 import ArtistCard from "@/components/ArtistCard";
 import "animate.css";
+import { redirect } from "next/navigation";
 
 const month = [
   "January",
@@ -38,17 +39,17 @@ const Page = async () => {
         }
       >
         <div className="animate__animated animate__fadeIn flex flex-col items-center gap-8 text-4xl">
-          <h1>
+          <h1 className="px-4 text-center">
             {month[monthVal]} looks good on you! Here are some of your trends
             from the last month...
           </h1>
         </div>
-        <TopArtists />
         <div className="animate__animated animate__fadeInUp delay-2 flex flex-col items-center gap-8 pt-10">
           {topArtists?.map((artist, index) => {
             return <ArtistCard key={index} artist={artist} />;
           })}
         </div>
+        <TopArtists />
       </div>
     </>
   );
