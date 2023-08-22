@@ -44,10 +44,17 @@ const Page = async () => {
             from the last month...
           </h1>
         </div>
-        <div className="animate__animated animate__fadeInUp delay-2 flex flex-col items-center gap-8 pt-10">
-          {topArtists?.map((artist, index) => {
-            return <ArtistCard key={index} artist={artist} />;
-          })}
+        <div className="relative flex flex-row overflow-x-hidden animate__animated animate__fadeInUp delay-2">
+          <div className="gap-8 flex flex-row p-4 mx-4 animate-marquee whitespace-nowrap">
+            {topArtists?.map((artist, index) => {
+              return <ArtistCard key={index} artist={artist} />;
+            })}
+          </div>
+          <div className="gap-8 flex flex-row absolute top-0 p-4 mx-4 animate-marquee2 whitespace-nowrap">
+            {topArtists?.map((artist, index) => {
+              return <ArtistCard key={index} artist={artist} />;
+            })}
+          </div>
         </div>
         <TopArtists />
       </div>

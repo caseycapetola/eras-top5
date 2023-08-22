@@ -18,8 +18,8 @@ const ArtistCard = ({ artist }) => {
     >
       <Image
         src={artist.images[1].url}
-        width={artist.images[1].width}
-        height={artist.images[1].height}
+        width={320}
+        height={320}
         alt={artist.name}
       />
       <div className={"text-center w-full flex flex-col justify-center pb-4"}>
